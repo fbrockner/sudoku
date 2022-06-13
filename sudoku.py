@@ -18,6 +18,7 @@ board = [
     [0,0,0,0,8,0,0,7,9]
 ]
 
+#prints sudoku board
 def displayBoard():
     for i in range(9):
             print(board[i])
@@ -31,6 +32,7 @@ def emptyCell():
     #if there are no empty spaces
     return -1, -1
 
+#check is guess is a valid solution
 def validNum(num, emptyCellRow, emptyCellCol):
 
     #check rows
@@ -57,10 +59,9 @@ def validNum(num, emptyCellRow, emptyCellCol):
     #if num passes all three checks then the num is correct
     return True
 
-#solver? i barely know her!!
+
 #returns true or false if there is a solution for the board
 def solver():
-
     row, col = emptyCell()
 
     #if there are no empty cells then the puzzle is finished
@@ -74,7 +75,7 @@ def solver():
                 return True
         board[row][col] = 0
     
-
+#run program and display the board
 displayBoard()
 print()
 solver()
